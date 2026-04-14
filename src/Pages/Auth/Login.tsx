@@ -24,16 +24,18 @@ const Login = () => {
             error: "Error signing account, Please try again🤗",
           }
         ).then((userData) => {
-          // Signed in
-          const user = userData; 
+          const user = userData; // bukan [0]
+                
           dispatch({
             type: "SET_USER",
             user: user,
           });
+        
           localStorage.setItem("user", JSON.stringify(user));
+        
           navigate("/");
-        }
-        ).catch((error) => {
+        })
+        .catch((error) => {
           // const errorCode = error.code;
           const errorMessage = error.message;
           toast.error(errorMessage, { autoClose: 15000 });

@@ -115,12 +115,21 @@ export const EMAILSIGNUP = async (email, password) => {
 //  Signin with email and password
 export const EMAILSIGNIN = async (email, password) => {
   const firebaseAuth = getAuth(app);
-  const result = await signInWithEmailAndPassword(firebaseAuth, email, password)
-  let user = result.user.providerData[0];
-  
 
-  const data = await firebaseGetUser(user.uid);
-  return data[0];
+  // ✅ WAJIB ADA
+  const result = await signInWithEmailAndPassword(firebaseAuth, email, password);
+
+  const firebaseUser = result.user;
+
+  const user = {
+    uid: firebaseUser.uid,
+    email: firebaseUser.email,
+  };
+
+  // simpan ke Firestore kalau belum ada
+  await firebaseAddUser(user);
+
+  return user;
 };
 
 

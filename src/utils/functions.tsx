@@ -76,7 +76,7 @@ export const fetchUserCartData = async (user: any, dispatch: any) => {
         console.log(e);
       });
   } else {
-    localStorage.setItem("cartItems", "undefined");
+    localStorage.removeItem("cartItems");
   }
 };
 
