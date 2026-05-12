@@ -140,7 +140,7 @@ export const firebaseFetchFoodItems = async () => {
   );
 
   return shuffleItems(items.docs.map((doc) => doc.data()));
-}
+};
 
 
 //  cart operation    

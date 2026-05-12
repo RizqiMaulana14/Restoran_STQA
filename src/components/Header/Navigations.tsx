@@ -38,18 +38,18 @@ const Navigations = ({ direction }: { direction?: string }) => {
         >
           <Link to={'/menu'}>Menu</Link>
         </motion.li>
-        <motion.li
+        {/* <motion.li
           whileHover={{ scale: 1.1 }}
           className="md:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
         >
           <Link to={'/services'}>Services</Link>
-        </motion.li>
-        <motion.li
+        </motion.li>*/}
+        {/* <motion.li 
           whileHover={{ scale: 1.1 }}
           className="md:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"
         >
           <Link to={'/about'}>About us</Link>
-        </motion.li>
+        </motion.li>*/}
         <motion.li
           whileHover={{ scale: 1.1 }}
           className="md:text-sm lg:text-md text-base text-textColor cursor-pointer hover:text-headingColor duration-100 transition-all ease-in-out"

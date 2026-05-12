@@ -83,16 +83,15 @@ export const fetchUserCartData = async (user: any, dispatch: any) => {
 export const fetchFoodData = async (dispatch: any) => {
   await firebaseFetchFoodItems()
     .then((data) => {
+      console.log("FOOD DATA =", data);
+
       dispatch({
         type: "SET_FOOD_ITEMS",
         foodItems: data,
       });
     })
-    .then(() => {})
-    .catch((e) => {
-      console.log(e);
-    });
 };
+
 
 export const getFoodyById = (menu: FoodItem[], fid: number) => {
   return menu.find((item: FoodItem) => item.id === fid);
